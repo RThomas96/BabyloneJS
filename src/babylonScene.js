@@ -58,29 +58,17 @@ var light = new HemisphericLight("light1", new Vector3(0, 1, 0), scene);
 // Default intensity is 1. Let's dim the light a small amount
 light.intensity = 0.7;
 
-// Create a grid material
-var wireMaterial = new StandardMaterial("wire", scene);
-wireMaterial.diffuseColor = new BABYLON.Color3(1, 0, 1);
+var spriteManagerCamel = new BABYLON.SpriteManager("camelManager", "Assets/camel.png", 88, {width: 71, height: 47}, scene);
 
-var material = new StandardMaterial("mat", scene);
-
-// Our built-in 'sphere' shape. Params: name, subdivs, size, scene
-// var sphere = Mesh.CreateSphere("sphere1", 16, 2, scene);
-var sphere = MeshBuilder.CreateTorus("sphere", {}, scene);
-
-// Move the sphere upward 1/2 its height
-sphere.position.y = 1;
-
-// Affect a material
-sphere.material = wireMaterial;
-
-// Our built-in 'ground' shape. Params: name, width, depth, subdivs, scene
-var ground = Mesh.CreateGround("ground1", 6, 6, 2, scene);
-
-// Affect a material
-ground.material = material;
+var player = new BABYLON.Sprite("player", spriteManagerCamel);
+player.playAnimation(23, 34, true, 100);
+//player.cellIndex = 23
+//player.position.y = -0.3;
+player.size = 5;
+player.isPickable = true;
 
 // Render every frame
 engine.runRenderLoop(() => {
     scene.render();
+    spriteManagerCamel._spriteTexture.updateSamplingMode(BABYLON.Texture.NEAREST_NEAREST_MIPLINEAR);
 });
