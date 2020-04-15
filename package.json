@@ -1,0 +1,24 @@
+{
+  "name": "myawesomeapp",
+  "version": "1.0.0",
+  "description": "First Babylone app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babylonjs/core": "^4.1.0",
+    "@babylonjs/gui": "^4.1.0",
+    "@babylonjs/inspector": "^4.1.0",
+    "@babylonjs/loaders": "^4.1.0",
+    "@babylonjs/materials": "^4.1.0",
+    "@babylonjs/post-processes": "^4.1.0",
+    "@babylonjs/procedural-textures": "^4.1.0",
+    "@babylonjs/serializers": "^4.1.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
